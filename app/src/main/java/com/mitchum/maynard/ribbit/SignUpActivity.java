@@ -1,17 +1,60 @@
 package com.mitchum.maynard.ribbit;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 public class SignUpActivity extends Activity {
+
+    private EditText mUsername;
+    private EditText mPassword;
+    private EditText mEmail;
+    private Button mSignUpButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        mUsername = (EditText) findViewById( R.id.usernameField );
+        mPassword = (EditText) findViewById( R.id.passwordField );
+        mEmail = (EditText) findViewById( R.id.emailField );
+        mSignUpButton = (Button) findViewById( R.id.signUpButton );
+
+        mSignUpButton.setOnClickListener( new View.OnClickListener()
+        {
+            @Override
+            public void onClick( View view )
+            {
+                String username = mUsername.getText().toString();
+                String password = mPassword.getText().toString();
+                String email = mEmail.getText().toString();
+
+                username = username.trim();
+                password = password.trim();
+                email = email.trim();
+
+                if(username.isEmpty() || password.isEmpty() || email.isEmpty())
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
+                    builder.setMessage(  R.string.sign_up_error_message );
+                    builder.setTitle( R.string.sign_up_error_title );
+                    builder.setPositiveButton(android.R.string.ok, null  );
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+                else
+                {
+                    //create the new user
+                }
+            }
+        } );
     }
 
 
