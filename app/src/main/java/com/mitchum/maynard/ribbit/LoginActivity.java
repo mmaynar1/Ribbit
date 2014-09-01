@@ -25,6 +25,7 @@ public class LoginActivity extends Activity
     private Button mLoginButton;
 
     private TextView mSignUpTextView;
+    private TextView mForgotPasswordTextView;
 
     @Override
     protected void onCreate( Bundle savedInstanceState )
@@ -47,6 +48,17 @@ public class LoginActivity extends Activity
             }
         } );
 
+
+        mForgotPasswordTextView = (TextView) findViewById( R.id.forgotPasswordText );
+        mForgotPasswordTextView.setOnClickListener( new View.OnClickListener()
+        {
+            @Override
+            public void onClick( View view )
+            {
+                Intent intent = new Intent( LoginActivity.this, ForgotPasswordActivity.class );
+                startActivity( intent );
+            }
+        } );
 
         mUsername = (EditText) findViewById( R.id.usernameField );
         mPassword = (EditText) findViewById( R.id.passwordField );
