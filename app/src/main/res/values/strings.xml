@@ -26,5 +26,7 @@
     <string name="forgot_password_success_message">Email reset link has been sent!</string>
     <string name="forgot_password_success_title">Success</string>
     <string name="forgot_password_text">Forgot your password?</string>
+    <string name="empty_inbox_label">No new messages!</string>
+    <string name="empty_friends_label">Add friends to begin</string>
 
 </resources>
