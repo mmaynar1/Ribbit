@@ -28,5 +28,7 @@
     <string name="forgot_password_text">Forgot your password?</string>
     <string name="empty_inbox_label">No new messages!</string>
     <string name="empty_friends_label">Add friends to begin</string>
+    <string name="menu_edit__friends_label">Edit Friends</string>
+    <string name="title_activity_edit_friends">Edit Friends</string>
 
 </resources>
